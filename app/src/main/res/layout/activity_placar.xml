@@ -6,13 +6,13 @@
     android:layout_height="match_parent"
     tools:context=".PlacarActivity">
 
-    <Button
-        android:id="@+id/btSalvarPlacar"
+    <TextView
+        android:id="@+id/tvNomePartida2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:onClick="saveGame"
-        android:text="Salvar Placar"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:text="Partida"
+        android:textSize="34sp"
+        android:textStyle="bold|italic"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -21,26 +21,46 @@
         android:id="@+id/tvPlacar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:onClick="alteraPlacar"
-        android:text="0 X 0"
+        android:text="0 - 0"
         android:textSize="48sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/btSalvarPlacar"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/tvNomePartida2"
+        app:layout_constraintVertical_chainStyle="packed" />
 
-    <TextView
-        android:id="@+id/tvNomePartida2"
+    <Button
+        android:id="@+id/btGoalTeamA"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
+        android:onClick="addGoalTeamA"
+        android:text="Goal Team A"
+        app:layout_constraintEnd_toStartOf="@+id/tvPlacar"
+        app:layout_constraintTop_toTopOf="@+id/tvPlacar"
+        app:layout_constraintBottom_toBottomOf="@+id/tvPlacar" />
+
+    <Button
+        android:id="@+id/btGoalTeamB"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:onClick="addGoalTeamB"
+        android:text="Goal Team B"
+        app:layout_constraintStart_toEndOf="@+id/tvPlacar"
+        app:layout_constraintTop_toTopOf="@+id/tvPlacar"
+        app:layout_constraintBottom_toBottomOf="@+id/tvPlacar" />
+
+    <Button
+        android:id="@+id/btSalvarPlacar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Partida"
-        android:textSize="34sp"
-        android:textStyle="bold|italic"
-        app:layout_constraintBottom_toTopOf="@+id/tvPlacar"
+        android:onClick="saveGame"
+        android:text="Salvar Placar"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/tvPlacar" />
 
     <Button
         android:id="@+id/btVerJogos"
@@ -51,4 +71,15 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/btSalvarPlacar" />
+
+    <Button
+        android:id="@+id/timerButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="startTimer"
+        android:text="Start Timer"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btVerJogos" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
